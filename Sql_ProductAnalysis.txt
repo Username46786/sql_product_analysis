@@ -1,0 +1,25 @@
+SELECT COUNT(*) FROM productwest;
+
+SELECT SUM(prodprice), (prodcost) from producteast;
+
+SELECT SUM(prodcost) from productwest;
+
+SELECT prodcost from productwest;
+
+SELECT prodFabCode, sum(prodcost) from producteast group by prodFabCode;
+
+
+select sum(prodcost)/count(*) from proudcteast;
+
+select avg(prodcost) from producteast;
+
+select min(prodprice), max(prodprice), avg(prodprice), 
+min(prodcost), max(prodcost), avg(prodcost)
+from producteast group by prodFabCode;
+
+
+select prodFabCode, (prodprice) - (prodcost) as profit
+ from producteast group by prodFabCode;
+
+select (sum(prodprice) - sum(prodcost)) / sum(prodprice) 
+as pm from producteast group by prodID, prodDesc;
